@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+
+{% block titulo %} Gestion Ventas {% endblock %}
+
+{% block cuerpo %}
+    <h1>Gestionar Ventas</h1>
+    <table>
+        <thead>
+            <tr>
+                <td style="padding: 10px;">ID Venta</td>
+                <td style="padding: 10px;">Fecha</td>
+                <td style="padding: 10px;">Estado</td>
+                <td style="padding: 10px;">Precio Total</td>
+                <td style="padding: 10px;">Cantidad</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for v in lasventas %}
+            <tr>
+                <td style="padding: 10px;">{{ v.id_venta }}</td>
+                <td style="padding: 10px;">{{ v.fecha }}</td>
+                <td style="padding: 10px;">{{ v.estado }}</td>
+                <td style="padding: 10px;">{{ v.precio_total }}</td>
+                <td style="padding: 10px;">{{ v.cantidad }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
